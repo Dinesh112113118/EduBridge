@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EduBridge AI Design System - Educational Platform Theme */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 220 15% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Educational Brand Colors */
+    --primary: 217 91% 40%;  /* Deep Academic Blue */
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 217 91% 50%;
+    --primary-glow: 217 91% 60%;
+
+    --secondary: 158 64% 52%;  /* Emerald Success */
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 158 64% 62%;
+
+    --accent: 24 95% 53%;  /* Warm Orange Highlight */
+    --accent-foreground: 0 0% 98%;
+    --accent-light: 24 95% 63%;
+
+    /* UI Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 40%;
+
+    /* Educational Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 4px 12px -2px hsl(var(--primary) / 0.15);
+    --shadow-strong: 0 8px 24px -4px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 32px hsl(var(--primary-glow) / 0.3);
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    --background: 215 30% 6%;
+    --foreground: 220 15% 95%;
+
+    --card: 215 25% 8%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 215 25% 8%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 215 30% 6%;
+
+    --secondary: 158 64% 45%;
+    --secondary-foreground: 220 15% 95%;
+
+    --accent: 24 95% 60%;
+    --accent-foreground: 215 30% 6%;
+
+    --muted: 215 25% 12%;
+    --muted-foreground: 220 10% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 15% 95%;
+
+    --border: 215 25% 12%;
+    --input: 215 25% 12%;
+    --ring: 217 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+}
+
+@layer components {
+  /* Custom Educational Components */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .success-gradient {
+    background: var(--gradient-success);
+  }
+
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  .educational-card {
+    @apply bg-card rounded-xl border border-border/50 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-all duration-300;
+  }
+
+  .stat-card {
+    @apply educational-card p-6 hover:scale-105 cursor-pointer;
+  }
+
+  .progress-glow {
+    box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.4);
+  }
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.2); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.4); }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+}
