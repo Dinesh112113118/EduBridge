@@ -163,7 +163,7 @@ The app uses a comprehensive design system with:
 ## 🚀 Deployment
 
 ### Using Lovable
-1. Open your [Lovable Project](https://lovable.dev/projects/54cd2773-6ff7-4754-9795-d9b47f988648)
+1. Open your (https://edu-bridge-eight.vercel.app/)
 2. Click Share → Publish
 3. Your app will be deployed instantly
 
